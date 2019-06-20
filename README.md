@@ -1,6 +1,6 @@
 |ClusterIP                                            |  NodePort:
-|-----------------------------------------------------|----------------------------------------------------------------------------------------|
-|Exposes a set of pods to other objects in the cluster|  expose a set of pods to the outside world                                             |
+|-----------------------------------------------------|----------------------------------------------------------------------------------------
+|Exposes a set of pods to other objects in the cluster|  expose a set of pods to the outside world                                             
 |ports:                                               |  ports:
 |  - port: 3000                                       |  - port: 3050        # other pod/container in k8 can connect to to talk to this pod
 |    targetPort: 3000                                 |    targetPort: 3000  # container port want to open to the outside of this pod
@@ -33,7 +33,7 @@ can merge k8 config file to one by seperating with "---"(not recommended)
 
 # Run on GCK:
 - create postgres password screct by connect to gke CLI
-- install nginx-ingress using helm
+- install helm using script
 - before run "helm init", run following cmd to create service account for tiller:
   + `kubectl create serviceaccount --namespace kube-system tiller`
   + `kubectl create clusterolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller`
