@@ -39,9 +39,9 @@ can merge k8 config file to one by seperating with "---"(not recommended)
   + `kubectl create clusterolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller`
 - init helm: `helm init --service-account tiller --upgrade`
 - install nginx-ingress: `helm install stable/nginx-ingress --name my-nginx --set rbac.create=true`
+- push code with travis.yml to travis ci and see the result
 
-
-* RBAC (Role based access control) :
+# RBAC (Role based access control) :
 - user account: a person account
 - service account: identifies a pod administering a cluster
 - ClusterRoleBinding: authorize an account to do a certain set of actions across the entire cluuster ( bind to an user acc or service acc)
